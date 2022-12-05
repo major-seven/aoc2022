@@ -36,7 +36,7 @@ fn part2(line_iter: &mut Lines<BufReader<File>>) {
     for mut cr in crates {
         result.push(cr.pop().unwrap());
     }
-    println!("{:?}", result);
+    println!("result part2: {:?}", result);
 }
 
 fn get_crate_init(line_iter: &mut Lines<BufReader<File>>) -> Vec<Vec<char>> {

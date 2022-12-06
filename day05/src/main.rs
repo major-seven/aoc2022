@@ -4,15 +4,15 @@ use std::io::{BufRead, BufReader, Lines};
 fn main() {
     let file = File::open("input.txt").unwrap();
     let mut line_iter = BufReader::new(file).lines();
-    // part1(&mut line_iter);
-    part2(&mut line_iter);
+    part1(&mut line_iter);
+    // part2(&mut line_iter);
 }
 
 fn part1(line_iter: &mut Lines<BufReader<File>>) {
     let mut crates = get_crate_init(line_iter);
     let concised_moves = get_concise_moves(line_iter);
     for m in &concised_moves {
-        for i in 0..m[0] {
+        for _ in 0..m[0] {
             let c = crates[m[1] - 1].pop().unwrap();
             crates[m[2] - 1].push(c);
         }
